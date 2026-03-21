@@ -156,17 +156,6 @@
                 0 0 80px rgba(255,255,255,0.02);
         }
 
-        /* Hero image clip */
-        .hero-image-wrapper {
-            clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
-        }
-
-        @media (max-width: 1023px) {
-            .hero-image-wrapper {
-                clip-path: none;
-            }
-        }
-
         /* Tire tread texture overlay */
         .tread-texture {
             background-image:
@@ -294,120 +283,106 @@
         </div>
     </nav>
 
-    <!-- ========== HERO — SPLIT LAYOUT ========== -->
+    <!-- ========== HERO — FULL-WIDTH BACKGROUND ========== -->
     <section class="relative min-h-screen flex items-center overflow-hidden bg-mono-black">
+        <!-- Background image -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1920&q=85" alt="" class="w-full h-full object-cover grayscale">
+            <div class="absolute inset-0 bg-mono-black/75"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-mono-black via-mono-black/80 to-mono-black/50 lg:to-mono-black/30"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-mono-black via-transparent to-mono-black/40"></div>
+        </div>
+
         <!-- Subtle tread texture over entire hero -->
         <div class="absolute inset-0 tread-texture"></div>
 
-        <!-- Glow accent behind hero content -->
+        <!-- Glow accent -->
         <div class="absolute left-[20%] top-[40%] -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] lg:w-[700px] lg:h-[700px] rounded-full bg-white/[0.03] blur-[100px] pointer-events-none"></div>
 
-        <!-- Large decorative tire ring — behind content -->
+        <!-- Large decorative tire ring -->
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] lg:w-[900px] lg:h-[900px] rounded-full hero-tire-ring opacity-40 hidden md:block"></div>
         <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] lg:w-[650px] lg:h-[650px] rounded-full border border-white/[0.03] hidden md:block"></div>
 
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="grid lg:grid-cols-2 gap-8 lg:gap-4 items-center min-h-screen py-28 lg:py-0">
-                <!-- LEFT — Copy -->
-                <div class="relative z-10">
-                    <!-- Dual-focus badges -->
-                    <div class="flex flex-wrap items-center gap-3 mb-8 animate-fade-in">
-                        <div class="inline-flex items-center gap-2 border border-white/15 rounded-full px-4 py-1.5">
-                            <svg class="w-3.5 h-3.5 text-white/70" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
-                            <span class="text-mono-light text-xs font-medium tracking-widest uppercase">Osobní vozy</span>
-                        </div>
-                        <div class="inline-flex items-center gap-2 border border-white/15 rounded-full px-4 py-1.5">
-                            <svg class="w-3.5 h-3.5 text-white/70" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                                <rect x="1" y="3" width="15" height="13" rx="2"/>
-                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-                                <circle cx="5.5" cy="18.5" r="2.5"/>
-                                <circle cx="18.5" cy="18.5" r="2.5"/>
-                            </svg>
-                            <span class="text-mono-light text-xs font-medium tracking-widest uppercase">Kamiony &amp; dodávky</span>
-                        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-32 lg:py-0 min-h-screen flex items-center">
+            <div class="w-full max-w-2xl">
+                <!-- Dual-focus badges -->
+                <div class="flex flex-wrap items-center gap-3 mb-8 animate-fade-in">
+                    <div class="inline-flex items-center gap-2 border border-white/15 rounded-full px-4 py-1.5 backdrop-blur-sm bg-white/[0.03]">
+                        <svg class="w-3.5 h-3.5 text-white/70" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+                        <span class="text-mono-light text-xs font-medium tracking-widest uppercase">Osobní vozy</span>
                     </div>
-
-                    <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.95] mb-6 animate-fade-up tracking-tighter">
-                        Pneuservis<br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-mono-light to-mono-silver">Václav Pergl</span>
-                    </h1>
-
-                    <div class="w-20 h-[2px] bg-gradient-to-r from-white to-transparent mb-6 animate-fade-up" style="animation-delay: 0.15s"></div>
-
-                    <p class="text-lg sm:text-xl text-mono-silver mb-10 max-w-lg animate-fade-up font-light leading-relaxed" style="animation-delay: 0.2s">
-                        Kompletní pneuservis v&nbsp;Lounech — od osobních aut přes dodávky až&nbsp;po&nbsp;kamiony a&nbsp;nákladní vozidla. Přezouvání, vyvažování, geometrie.
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row gap-4 animate-fade-up" style="animation-delay: 0.4s">
-                        <a href="tel:+420603908444" class="bg-white hover:bg-mono-off-white text-mono-black px-8 py-4 rounded-2xl font-bold text-lg transition-all hover:shadow-xl hover:shadow-white/10 flex items-center justify-center gap-3 group">
-                            <svg class="w-5 h-5 group-hover:animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                            Zavolejte nám
-                        </a>
-                        <a href="#sluzby" class="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all hover:bg-white/5 flex items-center justify-center gap-3">
-                            Naše služby
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-                        </a>
-                    </div>
-
-                    <!-- Quick stats — horizontal row -->
-                    <div class="flex gap-6 sm:gap-8 mt-14 animate-fade-up" style="animation-delay: 0.6s">
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-black text-white">20+</div>
-                            <div class="text-mono-silver text-sm mt-1 font-light">let zkušeností</div>
-                        </div>
-                        <div class="w-px bg-white/10"></div>
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-black text-white">OS+NK</div>
-                            <div class="text-mono-silver text-sm mt-1 font-light">osobní & nákladní</div>
-                        </div>
-                        <div class="w-px bg-white/10"></div>
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-black text-white">100%</div>
-                            <div class="text-mono-silver text-sm mt-1 font-light">osobní přístup</div>
-                        </div>
+                    <div class="inline-flex items-center gap-2 border border-white/15 rounded-full px-4 py-1.5 backdrop-blur-sm bg-white/[0.03]">
+                        <svg class="w-3.5 h-3.5 text-white/70" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                            <rect x="1" y="3" width="15" height="13" rx="2"/>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                            <circle cx="5.5" cy="18.5" r="2.5"/>
+                            <circle cx="18.5" cy="18.5" r="2.5"/>
+                        </svg>
+                        <span class="text-mono-light text-xs font-medium tracking-widest uppercase">Kamiony &amp; dodávky</span>
                     </div>
                 </div>
 
-                <!-- RIGHT — Dramatic hero image -->
-                <div class="relative animate-slide-in-right hidden lg:block">
-                    <div class="hero-image-wrapper relative">
-                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&q=85" alt="Pneumatika detail" class="w-full h-[88vh] object-cover grayscale">
-                        <!-- Gradient overlays for blending -->
-                        <div class="absolute inset-0 bg-gradient-to-r from-mono-black via-mono-black/40 to-transparent"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-mono-black via-transparent to-mono-black/30"></div>
-                        <div class="absolute inset-0 bg-gradient-to-b from-mono-black/50 via-transparent to-mono-black/60"></div>
-                        <!-- Soft glow on image -->
-                        <div class="absolute top-1/3 left-1/4 w-[300px] h-[300px] rounded-full bg-white/[0.04] blur-[80px] pointer-events-none"></div>
-                    </div>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.95] mb-6 animate-fade-up tracking-tighter">
+                    Pneuservis<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-mono-light to-mono-silver">Václav Pergl</span>
+                </h1>
 
-                    <!-- Floating detail card on image -->
-                    <div class="absolute bottom-20 left-8 glass rounded-2xl p-5 max-w-xs animate-fade-up" style="animation-delay: 0.8s">
-                        <div class="flex items-center gap-4 mb-2">
-                            <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center">
-                                <svg class="w-5 h-5 text-white tire-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <circle cx="12" cy="12" r="4"/>
-                                    <line x1="12" y1="2" x2="12" y2="6"/>
-                                    <line x1="12" y1="18" x2="12" y2="22"/>
-                                    <line x1="2" y1="12" x2="6" y2="12"/>
-                                    <line x1="18" y1="12" x2="22" y2="12"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="text-white font-bold text-sm">Zahradní 2474</div>
-                                <div class="text-mono-silver text-xs font-light">440 01 Louny</div>
-                            </div>
-                        </div>
-                        <div class="text-mono-silver text-xs font-light">Po—Pá 7:00—17:00</div>
-                    </div>
+                <div class="w-20 h-[2px] bg-gradient-to-r from-white to-transparent mb-6 animate-fade-up" style="animation-delay: 0.15s"></div>
+
+                <p class="text-lg sm:text-xl text-mono-silver mb-10 max-w-lg animate-fade-up font-light leading-relaxed" style="animation-delay: 0.2s">
+                    Kompletní pneuservis v&nbsp;Lounech — od osobních aut přes dodávky až&nbsp;po&nbsp;kamiony a&nbsp;nákladní vozidla. Přezouvání, vyvažování, geometrie.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 animate-fade-up" style="animation-delay: 0.4s">
+                    <a href="tel:+420603908444" class="bg-white hover:bg-mono-off-white text-mono-black px-8 py-4 rounded-2xl font-bold text-lg transition-all hover:shadow-xl hover:shadow-white/10 flex items-center justify-center gap-3 group">
+                        <svg class="w-5 h-5 group-hover:animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        Zavolejte nám
+                    </a>
+                    <a href="#sluzby" class="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all hover:bg-white/5 flex items-center justify-center gap-3">
+                        Naše služby
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                    </a>
                 </div>
 
-                <!-- Mobile hero image (visible only on small screens) -->
-                <div class="lg:hidden relative rounded-2xl overflow-hidden animate-fade-up" style="animation-delay: 0.5s">
-                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80" alt="Pneumatika detail" class="w-full h-56 object-cover grayscale">
-                    <div class="absolute inset-0 bg-gradient-to-t from-mono-black via-mono-black/40 to-transparent"></div>
+                <!-- Quick stats -->
+                <div class="flex gap-6 sm:gap-8 mt-14 animate-fade-up" style="animation-delay: 0.6s">
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-black text-white">20+</div>
+                        <div class="text-mono-silver text-sm mt-1 font-light">let zkušeností</div>
+                    </div>
+                    <div class="w-px bg-white/10"></div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-black text-white">OS+NK</div>
+                        <div class="text-mono-silver text-sm mt-1 font-light">osobní & nákladní</div>
+                    </div>
+                    <div class="w-px bg-white/10"></div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-black text-white">100%</div>
+                        <div class="text-mono-silver text-sm mt-1 font-light">osobní přístup</div>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Bottom info bar (desktop) -->
+        <div class="absolute bottom-8 right-8 glass rounded-2xl p-5 max-w-xs animate-fade-up hidden lg:block" style="animation-delay: 0.8s">
+            <div class="flex items-center gap-4 mb-2">
+                <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white tire-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <line x1="12" y1="2" x2="12" y2="6"/>
+                        <line x1="12" y1="18" x2="12" y2="22"/>
+                        <line x1="2" y1="12" x2="6" y2="12"/>
+                        <line x1="18" y1="12" x2="22" y2="12"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="text-white font-bold text-sm">Zahradní 2474</div>
+                    <div class="text-mono-silver text-xs font-light">440 01 Louny</div>
+                </div>
+            </div>
+            <div class="text-mono-silver text-xs font-light">Po—Pá 7:00—17:00</div>
         </div>
 
         <!-- Scroll indicator -->
@@ -494,7 +469,7 @@
     <section id="sluzby" class="py-20 sm:py-24 bg-mono-dark relative overflow-hidden">
         <!-- Background image overlay -->
         <div class="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1600706432502-77a0e2e32431?w=1920&q=80" alt="" class="w-full h-full object-cover grayscale opacity-5">
+            <img src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=1920&q=80" alt="" class="w-full h-full object-cover grayscale opacity-5">
         </div>
         <!-- Section glow -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] rounded-full bg-white/[0.025] blur-[100px] pointer-events-none"></div>
@@ -591,7 +566,7 @@
 
     <!-- ========== FULL-WIDTH VISUAL BLOCK — TRUCK FOCUS ========== -->
     <section class="relative h-[45vh] sm:h-[50vh] overflow-hidden flex items-center justify-center">
-        <img src="https://images.unsplash.com/photo-1586191582056-88e36aa0caf5?w=1920&q=80" alt="Nákladní pneumatiky" class="absolute inset-0 w-full h-full object-cover grayscale">
+        <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1920&q=80" alt="Nákladní pneumatiky" class="absolute inset-0 w-full h-full object-cover grayscale">
         <div class="absolute inset-0 bg-mono-black/70"></div>
         <div class="absolute inset-0 tread-texture"></div>
         <!-- Central glow -->
@@ -685,7 +660,7 @@
                     <!-- Right - Visual card -->
                     <div class="reveal-scale">
                         <div class="relative rounded-2xl overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80" alt="Pneuservis práce" class="w-full h-auto grayscale opacity-40">
+                            <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=800&q=80" alt="Pneuservis práce" class="w-full h-auto grayscale opacity-60">
                             <div class="absolute inset-0 bg-gradient-to-t from-mono-black via-mono-black/60 to-transparent"></div>
                             <!-- Glow on card -->
                             <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-2/3 h-1/3 bg-white/[0.04] blur-[60px] pointer-events-none"></div>
