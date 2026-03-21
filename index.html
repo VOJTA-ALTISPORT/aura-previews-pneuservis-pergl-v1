@@ -111,7 +111,73 @@
         .tire-icon { animation: spin-slow 20s linear infinite; }
 
         .thin-border { border: 1px solid rgba(255,255,255,0.06); }
-        .thin-border-dark { border: 1px solid rgba(0,0,0,0.08); }
+
+        /* Tire track pattern */
+        .tire-track-divider {
+            height: 40px;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent 0px,
+                transparent 8px,
+                rgba(255,255,255,0.04) 8px,
+                rgba(255,255,255,0.04) 12px,
+                transparent 12px,
+                transparent 16px
+            );
+            position: relative;
+            overflow: hidden;
+        }
+        .tire-track-divider::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                110deg,
+                transparent 0px,
+                transparent 20px,
+                rgba(255,255,255,0.03) 20px,
+                rgba(255,255,255,0.03) 22px,
+                transparent 22px,
+                transparent 40px
+            );
+        }
+        .tire-track-divider::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(10,10,10,1) 0%, transparent 15%, transparent 85%, rgba(10,10,10,1) 100%);
+        }
+
+        /* Hero tire ring */
+        .hero-tire-ring {
+            border: 3px solid rgba(255,255,255,0.06);
+            box-shadow:
+                inset 0 0 60px rgba(255,255,255,0.02),
+                0 0 80px rgba(255,255,255,0.02);
+        }
+
+        /* Hero image clip */
+        .hero-image-wrapper {
+            clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        @media (max-width: 1023px) {
+            .hero-image-wrapper {
+                clip-path: none;
+            }
+        }
+
+        /* Tire tread texture overlay */
+        .tread-texture {
+            background-image:
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 14px,
+                    rgba(255,255,255,0.015) 14px,
+                    rgba(255,255,255,0.015) 16px
+                );
+        }
     </style>
 </head>
 <body class="font-sans text-mono-light bg-mono-black antialiased" x-data="{ mobileMenu: false, scrolled: false }" @scroll.window="scrolled = (window.scrollY > 50)">
@@ -171,73 +237,101 @@
         </div>
     </nav>
 
-    <!-- ========== HERO ========== -->
+    <!-- ========== HERO — SPLIT LAYOUT ========== -->
     <section class="relative min-h-screen flex items-center overflow-hidden bg-mono-black">
-        <!-- Background image with grayscale overlay -->
-        <div class="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80" alt="" class="w-full h-full object-cover grayscale opacity-30">
-            <div class="absolute inset-0 bg-gradient-to-r from-mono-black via-mono-black/80 to-mono-black/60"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-mono-black via-transparent to-mono-black/40"></div>
-        </div>
+        <!-- Subtle tread texture over entire hero -->
+        <div class="absolute inset-0 tread-texture"></div>
 
-        <!-- Decorative tire -->
-        <div class="absolute right-10 top-1/2 -translate-y-1/2 opacity-[0.03] hidden lg:block">
-            <svg class="w-[500px] h-[500px] tire-icon" viewBox="0 0 200 200" fill="white">
-                <circle cx="100" cy="100" r="95" fill="none" stroke="white" stroke-width="10"/>
-                <circle cx="100" cy="100" r="60" fill="none" stroke="white" stroke-width="8"/>
-                <circle cx="100" cy="100" r="25" fill="white"/>
-                <rect x="96" y="5" width="8" height="30" rx="4" fill="white"/>
-                <rect x="96" y="165" width="8" height="30" rx="4" fill="white"/>
-                <rect x="5" y="96" width="30" height="8" rx="4" fill="white"/>
-                <rect x="165" y="96" width="30" height="8" rx="4" fill="white"/>
-                <rect x="30" y="30" width="8" height="30" rx="4" fill="white" transform="rotate(45 34 45)"/>
-                <rect x="150" y="140" width="8" height="30" rx="4" fill="white" transform="rotate(45 154 155)"/>
-                <rect x="30" y="150" width="8" height="30" rx="4" fill="white" transform="rotate(-45 34 165)"/>
-                <rect x="150" y="30" width="8" height="30" rx="4" fill="white" transform="rotate(-45 154 45)"/>
-            </svg>
-        </div>
+        <!-- Large decorative tire ring — behind content -->
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] lg:w-[900px] lg:h-[900px] rounded-full hero-tire-ring opacity-40 hidden md:block"></div>
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] lg:w-[650px] lg:h-[650px] rounded-full border border-white/[0.03] hidden md:block"></div>
 
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-0">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center gap-2 border border-white/15 rounded-full px-5 py-2 mb-8 animate-fade-in">
-                    <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
-                    <span class="text-mono-light text-sm font-light tracking-widest uppercase">Osobní i nákladní pneumatiky</span>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-4 items-center min-h-screen py-32 lg:py-0">
+                <!-- LEFT — Copy -->
+                <div class="relative z-10">
+                    <div class="inline-flex items-center gap-2 border border-white/15 rounded-full px-5 py-2 mb-8 animate-fade-in">
+                        <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
+                        <span class="text-mono-light text-sm font-light tracking-widest uppercase">Pneuservis pro Lounsko</span>
+                    </div>
+
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.95] mb-8 animate-fade-up tracking-tighter">
+                        Pneuservis<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-mono-light to-mono-silver">Václav Pergl</span>
+                    </h1>
+
+                    <div class="w-20 h-[2px] bg-gradient-to-r from-white to-transparent mb-8 animate-fade-up" style="animation-delay: 0.15s"></div>
+
+                    <p class="text-lg sm:text-xl text-mono-silver mb-12 max-w-lg animate-fade-up font-light leading-relaxed" style="animation-delay: 0.2s">
+                        Profesionální péče o vaše pneumatiky v&nbsp;Lounech. Přezouvání, vyvažování a&nbsp;geometrie náprav — osobní i&nbsp;nákladní vozidla.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 animate-fade-up" style="animation-delay: 0.4s">
+                        <a href="tel:+420603908444" class="bg-white hover:bg-mono-off-white text-mono-black px-8 py-4 rounded-2xl font-bold text-lg transition-all hover:shadow-xl hover:shadow-white/10 flex items-center justify-center gap-3 group">
+                            <svg class="w-5 h-5 group-hover:animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            Zavolejte nám
+                        </a>
+                        <a href="#sluzby" class="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all hover:bg-white/5 flex items-center justify-center gap-3">
+                            Naše služby
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Quick stats — horizontal row -->
+                    <div class="flex gap-8 mt-16 animate-fade-up" style="animation-delay: 0.6s">
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-black text-white">20+</div>
+                            <div class="text-mono-silver text-sm mt-1 font-light">let zkušeností</div>
+                        </div>
+                        <div class="w-px bg-white/10"></div>
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-black text-white">OS+NK</div>
+                            <div class="text-mono-silver text-sm mt-1 font-light">osobní & nákladní</div>
+                        </div>
+                        <div class="w-px bg-white/10"></div>
+                        <div>
+                            <div class="text-3xl sm:text-4xl font-black text-white">100%</div>
+                            <div class="text-mono-silver text-sm mt-1 font-light">osobní přístup</div>
+                        </div>
+                    </div>
                 </div>
 
-                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] mb-6 animate-fade-up tracking-tight">
-                    Pneuservis<br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-mono-silver">Václav Pergl</span>
-                </h1>
+                <!-- RIGHT — Dramatic hero image -->
+                <div class="relative animate-slide-in-right hidden lg:block">
+                    <div class="hero-image-wrapper relative">
+                        <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1200&q=85" alt="Pneumatika detail" class="w-full h-[90vh] object-cover grayscale">
+                        <!-- Gradient overlays for blending -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-mono-black via-mono-black/40 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-mono-black via-transparent to-mono-black/30"></div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-mono-black/50 via-transparent to-mono-black/60"></div>
+                    </div>
 
-                <p class="text-lg sm:text-xl text-mono-silver mb-12 max-w-xl animate-fade-up font-light leading-relaxed" style="animation-delay: 0.2s">
-                    Profesionální péče o vaše pneumatiky v Lounech. Přezouvání, vyvažování a geometrie náprav — pro osobní i nákladní vozidla.
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-4 animate-fade-up" style="animation-delay: 0.4s">
-                    <a href="tel:+420603908444" class="bg-white hover:bg-mono-off-white text-mono-black px-8 py-4 rounded-2xl font-bold text-lg transition-all hover:shadow-xl hover:shadow-white/10 flex items-center justify-center gap-3 group">
-                        <svg class="w-5 h-5 group-hover:animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                        Zavolejte nám
-                    </a>
-                    <a href="#sluzby" class="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all hover:bg-white/5 flex items-center justify-center gap-3">
-                        Naše služby
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-                    </a>
+                    <!-- Floating detail card on image -->
+                    <div class="absolute bottom-24 left-8 glass rounded-2xl p-6 max-w-xs animate-fade-up" style="animation-delay: 0.8s">
+                        <div class="flex items-center gap-4 mb-3">
+                            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white tire-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <circle cx="12" cy="12" r="4"/>
+                                    <line x1="12" y1="2" x2="12" y2="6"/>
+                                    <line x1="12" y1="18" x2="12" y2="22"/>
+                                    <line x1="2" y1="12" x2="6" y2="12"/>
+                                    <line x1="18" y1="12" x2="22" y2="12"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-white font-bold text-sm">Zahradní 2474</div>
+                                <div class="text-mono-silver text-xs font-light">440 01 Louny</div>
+                            </div>
+                        </div>
+                        <div class="text-mono-silver text-xs font-light">Po—Pá 7:00—17:00</div>
+                    </div>
                 </div>
 
-                <!-- Quick stats -->
-                <div class="grid grid-cols-3 gap-6 mt-20 animate-fade-up" style="animation-delay: 0.6s">
-                    <div class="border border-white/10 rounded-2xl p-5 text-center backdrop-blur-sm">
-                        <div class="text-2xl sm:text-3xl font-black text-white">20+</div>
-                        <div class="text-mono-silver text-sm mt-1 font-light">let zkušeností</div>
-                    </div>
-                    <div class="border border-white/10 rounded-2xl p-5 text-center backdrop-blur-sm">
-                        <div class="text-2xl sm:text-3xl font-black text-white">OS+NK</div>
-                        <div class="text-mono-silver text-sm mt-1 font-light">osobní & nákladní</div>
-                    </div>
-                    <div class="border border-white/10 rounded-2xl p-5 text-center backdrop-blur-sm">
-                        <div class="text-2xl sm:text-3xl font-black text-white">100%</div>
-                        <div class="text-mono-silver text-sm mt-1 font-light">osobní přístup</div>
-                    </div>
+                <!-- Mobile hero image (visible only on small screens) -->
+                <div class="lg:hidden relative rounded-2xl overflow-hidden animate-fade-up" style="animation-delay: 0.5s">
+                    <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80" alt="Pneumatika detail" class="w-full h-64 object-cover grayscale">
+                    <div class="absolute inset-0 bg-gradient-to-t from-mono-black via-mono-black/40 to-transparent"></div>
                 </div>
             </div>
         </div>
@@ -248,8 +342,8 @@
         </div>
     </section>
 
-    <!-- Thin divider -->
-    <div class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+    <!-- ===== TIRE TRACK DIVIDER ===== -->
+    <div class="tire-track-divider"></div>
 
     <!-- ========== SERVICES ========== -->
     <section id="sluzby" class="py-28 bg-mono-dark relative overflow-hidden">
@@ -357,16 +451,41 @@
         </div>
     </section>
 
-    <!-- Thin divider -->
-    <div class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+    <!-- ===== TIRE TRACK DIVIDER ===== -->
+    <div class="tire-track-divider"></div>
+
+    <!-- ========== FULL-WIDTH VISUAL BLOCK ========== -->
+    <section class="relative h-[50vh] md:h-[60vh] overflow-hidden flex items-center justify-center">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80" alt="" class="absolute inset-0 w-full h-full object-cover grayscale">
+        <div class="absolute inset-0 bg-mono-black/70"></div>
+        <div class="absolute inset-0 tread-texture"></div>
+        <div class="relative text-center px-4 reveal">
+            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full border-2 border-white/20 mb-8">
+                <svg class="w-10 h-10 text-white tire-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"/>
+                    <circle cx="12" cy="12" r="6"/>
+                    <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                    <line x1="12" y1="2" x2="12" y2="5" stroke-width="1.5"/>
+                    <line x1="12" y1="19" x2="12" y2="22" stroke-width="1.5"/>
+                    <line x1="2" y1="12" x2="5" y2="12" stroke-width="1.5"/>
+                    <line x1="19" y1="12" x2="22" y2="12" stroke-width="1.5"/>
+                </svg>
+            </div>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tighter mb-4 leading-tight">
+                Precizní práce.<br>Férové ceny.
+            </h2>
+            <p class="text-mono-silver text-lg sm:text-xl font-light max-w-xl mx-auto">Více než 20 let zkušeností s&nbsp;pneumatikami pro osobní i&nbsp;nákladní vozidla.</p>
+        </div>
+    </section>
+
+    <!-- ===== TIRE TRACK DIVIDER ===== -->
+    <div class="tire-track-divider"></div>
 
     <!-- ========== WHY US ========== -->
     <section id="proc-my" class="relative overflow-hidden">
-        <!-- Full-width image band -->
         <div class="relative py-28">
             <div class="absolute inset-0">
-                <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1920&q=80" alt="" class="w-full h-full object-cover grayscale opacity-15">
-                <div class="absolute inset-0 bg-mono-black/70"></div>
+                <div class="absolute inset-0 bg-mono-black"></div>
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -466,8 +585,8 @@
         </div>
     </section>
 
-    <!-- Thin divider -->
-    <div class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+    <!-- ===== TIRE TRACK DIVIDER ===== -->
+    <div class="tire-track-divider"></div>
 
     <!-- ========== CONTACT ========== -->
     <section id="kontakt" class="py-28 bg-mono-dark relative overflow-hidden">
