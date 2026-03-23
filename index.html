@@ -22,9 +22,9 @@
         "description": "Přezouvání, vyvažování a geometrie náprav pro osobní i nákladní vozidla v Lounech.",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Zahradní 2474",
-            "addressLocality": "Louny",
-            "postalCode": "440 01",
+            "streetAddress": "Areál bývalého cukrovaru",
+            "addressLocality": "Chlumčany u Loun",
+            "postalCode": "439 03",
             "addressCountry": "CZ"
         },
         "telephone": "+420603908444",
@@ -88,7 +88,7 @@
         [x-cloak] { display: none !important; }
         #scroll-progress { transform-origin: left; transform: scaleX(0); }
 
-        .glass { background: rgba(255,255,255,.05); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.08); }
+        .glass { background: rgba(20,20,20,.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.10); }
 
         .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
         .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -291,7 +291,7 @@
         <!-- Background image -->
         <div class="absolute inset-0">
             <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1920&q=85" alt="" class="w-full h-full object-cover grayscale">
-            <div class="absolute inset-0 bg-mono-black/75"></div>
+            <div class="absolute inset-0 bg-black/50"></div>
             <div class="absolute inset-0 bg-gradient-to-r from-mono-black via-mono-black/80 to-mono-black/50 lg:to-mono-black/30"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-mono-black via-transparent to-mono-black/40"></div>
         </div>
@@ -325,14 +325,14 @@
                     </div>
                 </div>
 
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.95] mb-6 animate-fade-up tracking-tighter">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-[0.95] mb-6 animate-fade-up tracking-tighter" style="text-shadow: 0 2px 8px rgba(0,0,0,0.8);">
                     Pneuservis<br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-mono-light to-mono-silver">Václav Pergl</span>
                 </h1>
 
                 <div class="w-20 h-[2px] bg-gradient-to-r from-white to-transparent mb-6 animate-fade-up" style="animation-delay: 0.15s"></div>
 
-                <p class="text-lg sm:text-xl text-mono-silver mb-10 max-w-lg animate-fade-up font-light leading-relaxed" style="animation-delay: 0.2s">
+                <p class="text-lg sm:text-xl text-mono-silver mb-10 max-w-lg animate-fade-up font-light leading-relaxed" style="animation-delay: 0.2s; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">
                     Kompletní pneuservis v&nbsp;Lounech — od osobních aut přes dodávky až&nbsp;po&nbsp;kamiony a&nbsp;nákladní vozidla. Přezouvání, vyvažování, geometrie.
                 </p>
 
@@ -377,8 +377,8 @@
                     </svg>
                 </div>
                 <div>
-                    <div class="text-white font-bold text-lg tracking-tight">Zahradní 2474</div>
-                    <div class="text-mono-silver text-sm font-light">440 01 Louny</div>
+                    <div class="text-white font-bold text-lg tracking-tight">Areál býv. cukrovaru</div>
+                    <div class="text-mono-silver text-sm font-light">Chlumčany u Loun, 439 03</div>
                 </div>
             </div>
             <div class="w-full h-px bg-white/10"></div>
@@ -421,7 +421,8 @@
                 <!-- Osobní vozy -->
                 <div class="relative group rounded-2xl overflow-hidden reveal" style="--i:0">
                     <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80" alt="Osobní automobil" class="w-full h-72 sm:h-80 object-cover grayscale group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-mono-black via-mono-black/60 to-mono-black/20"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-mono-black via-mono-black/70 to-mono-black/40"></div>
+                    <div class="absolute inset-0 bg-black/20"></div>
                     <!-- Glow accent -->
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/3 bg-white/[0.04] blur-[60px] pointer-events-none"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-7 sm:p-8">
@@ -429,7 +430,7 @@
                             <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
                                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
                             </div>
-                            <h3 class="text-xl font-bold text-white">Osobní vozy</h3>
+                            <h3 class="text-xl font-bold text-white" style="text-shadow: 0 2px 8px rgba(0,0,0,0.8);">Osobní vozy</h3>
                         </div>
                         <p class="text-mono-silver text-sm font-light leading-relaxed mb-4">Přezouvání, vyvažování, geometrie a prodej pneumatik pro osobní automobily, SUV a rodinné vozy.</p>
                         <div class="flex flex-wrap gap-2">
@@ -444,7 +445,8 @@
                 <!-- Nákladní vozy -->
                 <div class="relative group rounded-2xl overflow-hidden reveal" style="--i:1">
                     <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80" alt="Nákladní vozidlo" class="w-full h-72 sm:h-80 object-cover grayscale group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-mono-black via-mono-black/60 to-mono-black/20"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-mono-black via-mono-black/70 to-mono-black/40"></div>
+                    <div class="absolute inset-0 bg-black/20"></div>
                     <!-- Glow accent -->
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/3 bg-white/[0.04] blur-[60px] pointer-events-none"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-7 sm:p-8">
@@ -457,7 +459,7 @@
                                     <circle cx="18.5" cy="18.5" r="2.5"/>
                                 </svg>
                             </div>
-                            <h3 class="text-xl font-bold text-white">Nákladní &amp; komerční</h3>
+                            <h3 class="text-xl font-bold text-white" style="text-shadow: 0 2px 8px rgba(0,0,0,0.8);">Nákladní &amp; komerční</h3>
                         </div>
                         <p class="text-mono-silver text-sm font-light leading-relaxed mb-4">Servis pneumatik pro kamiony, nákladní vozidla, dodávky, přívěsy a firemní flotily všech velikostí.</p>
                         <div class="flex flex-wrap gap-2">
@@ -494,7 +496,7 @@
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger-children">
                 <!-- Service 1: Přezouvání osobní -->
-                <div class="service-card relative bg-mono-charcoal/50 rounded-2xl p-7 thin-border reveal" style="--i:0">
+                <div class="service-card relative bg-mono-charcoal/80 rounded-2xl p-7 thin-border reveal" style="--i:0">
                     <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-5">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                             <circle cx="12" cy="12" r="10"/>
@@ -506,7 +508,7 @@
                 </div>
 
                 <!-- Service 2: Přezouvání nákladní -->
-                <div class="service-card relative bg-mono-charcoal/50 rounded-2xl p-7 thin-border reveal" style="--i:1">
+                <div class="service-card relative bg-mono-charcoal/80 rounded-2xl p-7 thin-border reveal" style="--i:1">
                     <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-5">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                             <rect x="1" y="3" width="15" height="13" rx="2"/>
@@ -520,7 +522,7 @@
                 </div>
 
                 <!-- Service 3: Vyvažování -->
-                <div class="service-card relative bg-mono-charcoal/50 rounded-2xl p-7 thin-border reveal" style="--i:2">
+                <div class="service-card relative bg-mono-charcoal/80 rounded-2xl p-7 thin-border reveal" style="--i:2">
                     <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-5">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                             <path d="M12 3v18"/>
@@ -534,7 +536,7 @@
                 </div>
 
                 <!-- Service 4: Geometrie -->
-                <div class="service-card relative bg-mono-charcoal/50 rounded-2xl p-7 thin-border reveal" style="--i:3">
+                <div class="service-card relative bg-mono-charcoal/80 rounded-2xl p-7 thin-border reveal" style="--i:3">
                     <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-5">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                             <path d="M2 12h4l3-9 6 18 3-9h4"/>
@@ -545,7 +547,7 @@
                 </div>
 
                 <!-- Service 5: Uskladnění -->
-                <div class="service-card relative bg-mono-charcoal/50 rounded-2xl p-7 thin-border reveal" style="--i:4">
+                <div class="service-card relative bg-mono-charcoal/80 rounded-2xl p-7 thin-border reveal" style="--i:4">
                     <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-5">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                             <path d="M20 7h-4l-2-3H10L8 7H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/>
@@ -558,7 +560,7 @@
                 </div>
 
                 <!-- Service 6: Opravy defektů -->
-                <div class="service-card relative bg-mono-charcoal/50 rounded-2xl p-7 thin-border reveal" style="--i:5">
+                <div class="service-card relative bg-mono-charcoal/80 rounded-2xl p-7 thin-border reveal" style="--i:5">
                     <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-5">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                             <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
@@ -577,7 +579,7 @@
     <!-- ========== FULL-WIDTH VISUAL BLOCK — TRUCK FOCUS ========== -->
     <section class="relative h-[45vh] sm:h-[50vh] overflow-hidden flex items-center justify-center">
         <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1920&q=80" alt="Nákladní pneumatiky" class="absolute inset-0 w-full h-full object-cover grayscale">
-        <div class="absolute inset-0 bg-mono-black/70"></div>
+        <div class="absolute inset-0 bg-black/60"></div>
         <div class="absolute inset-0 tread-texture"></div>
         <!-- Central glow -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-white/[0.04] blur-[80px] pointer-events-none"></div>
@@ -593,10 +595,10 @@
                     <line x1="19" y1="12" x2="22" y2="12" stroke-width="1.5"/>
                 </svg>
             </div>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tighter mb-3 leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tighter mb-3 leading-tight" style="text-shadow: 0 2px 8px rgba(0,0,0,0.8);">
                 Osobní i&nbsp;nákladní.<br>Precizní práce, férové ceny.
             </h2>
-            <p class="text-mono-silver text-base sm:text-lg font-light max-w-xl mx-auto">Více než 20 let zkušeností s&nbsp;pneumatikami — od osobních vozů po kamiony a&nbsp;celé flotily.</p>
+            <p class="text-mono-silver text-base sm:text-lg font-light max-w-xl mx-auto" style="text-shadow: 0 2px 8px rgba(0,0,0,0.8);">Více než 20 let zkušeností s&nbsp;pneumatikami — od osobních vozů po kamiony a&nbsp;celé flotily.</p>
         </div>
     </section>
 
@@ -855,9 +857,9 @@
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     </div>
                     <h3 class="text-white font-bold text-lg mb-2">Adresa</h3>
-                    <p class="text-white/80 text-lg font-semibold">Zahradní 2474</p>
-                    <p class="text-white/80 text-lg">440 01 Louny</p>
-                    <a href="https://maps.google.com/?q=Zahradní+2474,+440+01+Louny" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-white hover:text-mono-light text-sm font-medium mt-3 transition-colors border-b border-white/20 pb-0.5">
+                    <p class="text-white/80 text-lg font-semibold">Areál býv. cukrovaru</p>
+                    <p class="text-white/80 text-lg">Chlumčany u Loun, 439 03</p>
+                    <a href="https://maps.google.com/?q=50.339191,13.839672" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-white hover:text-mono-light text-sm font-medium mt-3 transition-colors border-b border-white/20 pb-0.5">
                         Otevřít v mapě
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
                     </a>
@@ -889,26 +891,26 @@
             <!-- Google Map -->
             <div class="mt-10 reveal rounded-2xl overflow-hidden border border-white/10">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2536.5!2d13.7938!3d50.3570!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470bdf3a1e3c7c5f%3A0x400af0f66164e40!2sZahradn%C3%AD%202474%2C%20440%2001%20Louny!5e0!3m2!1scs!2scz!4v1711200000000!5m2!1scs!2scz"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2536.5!2d13.839672!3d50.339191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!1s0x0%3A0x0!5e0!3m2!1scs!2scz!4v1711200000000!5m2!1scs!2scz"
                     width="100%"
                     height="350"
                     style="border:0; filter: grayscale(1) invert(0.92) contrast(1.1);"
                     allowfullscreen=""
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
-                    title="Mapa - Pneuservis Pergl, Zahradní 2474, Louny">
+                    title="Mapa - Pneuservis Pergl, Chlumčany u Loun">
                 </iframe>
             </div>
 
             <!-- CTA bar -->
             <div class="mt-14 relative rounded-2xl overflow-hidden reveal">
                 <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1400&q=80" alt="" class="absolute inset-0 w-full h-full object-cover grayscale opacity-20">
-                <div class="absolute inset-0 bg-mono-black/70"></div>
+                <div class="absolute inset-0 bg-black/75"></div>
                 <!-- CTA glow -->
                 <div class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-full bg-white/[0.03] blur-[60px] pointer-events-none"></div>
                 <div class="relative p-8 sm:p-12 text-center">
-                    <h3 class="text-2xl sm:text-3xl font-black text-white mb-3 tracking-tight">Potřebujete přezout pneumatiky?</h3>
-                    <p class="text-mono-silver text-base sm:text-lg mb-7 max-w-xl mx-auto font-light">Osobní auto i kamion — zavolejte nám a domluvíme termín. Většinu služeb zvládáme na počkání.</p>
+                    <h3 class="text-2xl sm:text-3xl font-black text-white mb-3 tracking-tight" style="text-shadow: 0 2px 8px rgba(0,0,0,0.8);">Potřebujete přezout pneumatiky?</h3>
+                    <p class="text-mono-silver text-base sm:text-lg mb-7 max-w-xl mx-auto font-light" style="text-shadow: 0 2px 8px rgba(0,0,0,0.8);">Osobní auto i kamion — zavolejte nám a domluvíme termín. Většinu služeb zvládáme na počkání.</p>
                     <a href="tel:+420603908444" class="inline-flex items-center gap-3 bg-white text-mono-black px-8 py-4 rounded-2xl font-bold text-lg hover:bg-mono-off-white transition-all hover:shadow-xl hover:shadow-white/10 group">
                         <svg class="w-5 h-5 group-hover:animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                         +420 603 908 444
@@ -931,7 +933,7 @@
                     </div>
                     <div>
                         <span class="text-white font-bold text-sm block">Pneuservis Václav Pergl</span>
-                        <span class="text-mono-silver text-xs font-light">Zahradní 2474, 440 01 Louny</span>
+                        <span class="text-mono-silver text-xs font-light">Areál býv. cukrovaru, Chlumčany u Loun, 439 03</span>
                     </div>
                 </div>
                 <div class="flex items-center gap-6 text-mono-silver text-sm font-light flex-wrap justify-center md:justify-end">
