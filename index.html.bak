@@ -28,7 +28,6 @@
             "addressCountry": "CZ"
         },
         "telephone": "+420603908444",
-        "email": "info@pneuservispergl.cz",
         "openingHours": "Mo-Fr 07:00-17:00",
         "areaServed": "Louny",
         "priceRange": "$$",
@@ -259,7 +258,6 @@
                 <div class="hidden md:flex items-center gap-10">
                     <a href="#sluzby" class="nav-link text-white/60 hover:text-white text-sm font-light tracking-wide transition-colors">Služby</a>
                     <a href="#proc-my" class="nav-link text-white/60 hover:text-white text-sm font-light tracking-wide transition-colors">Proč my</a>
-                    <a href="#recenze" class="nav-link text-white/60 hover:text-white text-sm font-light tracking-wide transition-colors">Recenze</a>
                     <a href="#kontakt" class="nav-link text-white/60 hover:text-white text-sm font-light tracking-wide transition-colors">Kontakt</a>
                     <a href="tel:+420603908444" class="bg-white hover:bg-mono-off-white text-mono-black px-5 py-2.5 rounded-xl text-sm font-semibold transition-all hover:shadow-lg hover:shadow-white/10 flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -279,7 +277,6 @@
                  class="md:hidden mt-4 glass rounded-2xl p-6 space-y-4">
                 <a href="#sluzby" @click="mobileMenu = false" class="block text-white/90 hover:text-white transition-colors font-medium">Služby</a>
                 <a href="#proc-my" @click="mobileMenu = false" class="block text-white/90 hover:text-white transition-colors font-medium">Proč my</a>
-                <a href="#recenze" @click="mobileMenu = false" class="block text-white/90 hover:text-white transition-colors font-medium">Recenze</a>
                 <a href="#kontakt" @click="mobileMenu = false" class="block text-white/90 hover:text-white transition-colors font-medium">Kontakt</a>
                 <a href="tel:+420603908444" class="block bg-white text-mono-black text-center py-3 rounded-xl font-semibold mt-2">Zavolat: 603 908 444</a>
             </div>
@@ -717,101 +714,6 @@
     <!-- ===== TIRE TRACK DIVIDER ===== -->
     <div class="tire-track-divider"></div>
 
-    <!-- ========== REVIEWS ========== -->
-    <section id="recenze" class="py-20 sm:py-24 bg-mono-black relative overflow-hidden">
-        <!-- Glow -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] rounded-full bg-white/[0.02] blur-[100px] pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="text-center mb-14 reveal">
-                <span class="inline-block text-mono-silver font-light text-sm uppercase tracking-[0.3em] mb-4">Reference</span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 tracking-tight">Co o nas rikaji zakaznici</h2>
-                <div class="w-16 h-px bg-white/30 mx-auto mb-5"></div>
-                <p class="text-mono-silver text-lg max-w-2xl mx-auto font-light leading-relaxed">Spokojeni zakaznici jsou nasi nejlepsi vizitkou.</p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
-                <!-- Review 1 -->
-                <div class="glass rounded-2xl p-7 hover:border-white/15 transition-all reveal" style="--i:0">
-                    <div class="flex items-center gap-1 mb-4 text-yellow-400 text-lg">
-                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-                    </div>
-                    <p class="text-mono-silver text-sm leading-relaxed font-light mb-5">"Prezuti na zimu behem 40 minut, bez objednani. Cena ferova, prace precizni. Jezdim sem uz roky a nikdy jsem nemel problem."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white font-bold text-sm">MK</div>
-                        <div>
-                            <div class="text-white font-semibold text-sm">Martin K.</div>
-                            <div class="text-mono-silver text-xs font-light">Louny</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 2 -->
-                <div class="glass rounded-2xl p-7 hover:border-white/15 transition-all reveal" style="--i:1">
-                    <div class="flex items-center gap-1 mb-4 text-yellow-400 text-lg">
-                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-                    </div>
-                    <p class="text-mono-silver text-sm leading-relaxed font-light mb-5">"Konecne pneuservis, kde se clovek nemusi bat, ze ho nekdo natahne. Pan Pergl poradi, vysvetli a cena odpovida kvalite. Doporucuji!"</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white font-bold text-sm">JV</div>
-                        <div>
-                            <div class="text-white font-semibold text-sm">Jana V.</div>
-                            <div class="text-mono-silver text-xs font-light">Postoloprty</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="glass rounded-2xl p-7 hover:border-white/15 transition-all reveal" style="--i:2">
-                    <div class="flex items-center gap-1 mb-4 text-yellow-400 text-lg">
-                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-                    </div>
-                    <p class="text-mono-silver text-sm leading-relaxed font-light mb-5">"Mame flotilu 12 dodavek a pan Pergl nam vzdy vyjde vstric. Rychle, spolehlivy a k zastizeni i mimo hlavni sezonu. Skvela spoluprace."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white font-bold text-sm">PH</div>
-                        <div>
-                            <div class="text-white font-semibold text-sm">Petr H.</div>
-                            <div class="text-mono-silver text-xs font-light">Žatec — firemni zakaznik</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 4 -->
-                <div class="glass rounded-2xl p-7 hover:border-white/15 transition-all reveal" style="--i:3">
-                    <div class="flex items-center gap-1 mb-4 text-yellow-400 text-lg">
-                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span class="text-white/20">&#9733;</span>
-                    </div>
-                    <p class="text-mono-silver text-sm leading-relaxed font-light mb-5">"Vyvazovani kol + geometrie, vsechno hotove do hodiny. Autem jezdim uplne jinak. Jediny minus — parkovani pred dilnou je trochu male."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white font-bold text-sm">LN</div>
-                        <div>
-                            <div class="text-white font-semibold text-sm">Lukas N.</div>
-                            <div class="text-mono-silver text-xs font-light">Louny</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 5 -->
-                <div class="glass rounded-2xl p-7 hover:border-white/15 transition-all reveal sm:col-span-2 lg:col-span-2" style="--i:4">
-                    <div class="flex items-center gap-1 mb-4 text-yellow-400 text-lg">
-                        <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-                    </div>
-                    <p class="text-mono-silver text-sm leading-relaxed font-light mb-5">"Defekt na dalnici a pan Pergl me vzal i bez objednavky. Oprava rychla, cena rozumna. Zachranil mi den, dekuji! Pro pristi sezonu urcite prijedu na kompletni prezuti."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white font-bold text-sm">ET</div>
-                        <div>
-                            <div class="text-white font-semibold text-sm">Eva T.</div>
-                            <div class="text-mono-silver text-xs font-light">Kladno</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== TIRE TRACK DIVIDER ===== -->
-    <div class="tire-track-divider"></div>
-
     <!-- ========== CONTACT ========== -->
     <section id="kontakt" class="py-20 sm:py-24 bg-mono-dark relative overflow-hidden">
         <div class="absolute inset-0">
@@ -828,7 +730,7 @@
                 <p class="text-mono-silver text-lg max-w-2xl mx-auto font-light leading-relaxed">Zastavte se osobně nebo nám zavolejte. Rádi vám poradíme a domluvíme termín.</p>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Contact card: Phone -->
                 <div class="glass rounded-2xl p-7 text-center group hover:border-white/15 transition-all reveal" style="--i:0">
                     <div class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-white/10 transition-colors">
@@ -839,18 +741,8 @@
                     <p class="text-mono-silver text-sm mt-3 font-light">Zavolejte kdykoliv v pracovní době</p>
                 </div>
 
-                <!-- Contact card: Email -->
-                <div class="glass rounded-2xl p-7 text-center group hover:border-white/15 transition-all reveal" style="--i:1">
-                    <div class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-white/10 transition-colors">
-                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    </div>
-                    <h3 class="text-white font-bold text-lg mb-2">E-mail</h3>
-                    <a href="mailto:info@pneuservispergl.cz" class="text-white text-base font-bold hover:text-mono-light transition-colors break-all">info@pneuservispergl.cz</a>
-                    <p class="text-mono-silver text-sm mt-3 font-light">Napiste nam, ozveme se do 24 hodin</p>
-                </div>
-
                 <!-- Contact card: Address -->
-                <div class="glass rounded-2xl p-7 text-center group hover:border-white/15 transition-all reveal" style="--i:2">
+                <div class="glass rounded-2xl p-7 text-center group hover:border-white/15 transition-all reveal" style="--i:1">
                     <div class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-white/10 transition-colors">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                     </div>
@@ -864,7 +756,7 @@
                 </div>
 
                 <!-- Contact card: Hours -->
-                <div class="glass rounded-2xl p-7 text-center group hover:border-white/15 transition-all reveal" style="--i:3">
+                <div class="glass rounded-2xl p-7 text-center group hover:border-white/15 transition-all reveal sm:col-span-2 lg:col-span-1" style="--i:2">
                     <div class="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-white/10 transition-colors">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                     </div>
@@ -884,20 +776,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Google Map -->
-            <div class="mt-10 reveal rounded-2xl overflow-hidden border border-white/10">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2536.5!2d13.7938!3d50.3570!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470bdf3a1e3c7c5f%3A0x400af0f66164e40!2sZahradn%C3%AD%202474%2C%20440%2001%20Louny!5e0!3m2!1scs!2scz!4v1711200000000!5m2!1scs!2scz"
-                    width="100%"
-                    height="350"
-                    style="border:0; filter: grayscale(1) invert(0.92) contrast(1.1);"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Mapa - Pneuservis Pergl, Zahradní 2474, Louny">
-                </iframe>
             </div>
 
             <!-- CTA bar -->
@@ -934,9 +812,8 @@
                         <span class="text-mono-silver text-xs font-light">Zahradní 2474, 440 01 Louny</span>
                     </div>
                 </div>
-                <div class="flex items-center gap-6 text-mono-silver text-sm font-light flex-wrap justify-center md:justify-end">
+                <div class="flex items-center gap-6 text-mono-silver text-sm font-light">
                     <a href="tel:+420603908444" class="hover:text-white transition-colors">+420 603 908 444</a>
-                    <a href="mailto:info@pneuservispergl.cz" class="hover:text-white transition-colors">info@pneuservispergl.cz</a>
                     <span>&copy; 2026 Pneuservis Pergl</span>
                 </div>
             </div>
