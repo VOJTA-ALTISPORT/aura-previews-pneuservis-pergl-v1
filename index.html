@@ -229,11 +229,16 @@
 </head>
 <body class="font-sans text-mono-light bg-mono-black antialiased" x-data="{ mobileMenu: false, scrolled: false }" @scroll.window="scrolled = (window.scrollY > 50)">
 
+    <!-- Demo Banner -->
+    <div class="fixed top-0 left-0 w-full bg-gradient-to-r from-mono-charcoal via-mono-gray to-mono-charcoal z-[70] py-1.5 text-center text-xs tracking-wider text-mono-silver border-b border-mono-gray/30">
+        Demo stránka vytvořena — <span class="text-white font-medium">Vojtěch Titlbach</span> by <span class="font-semibold text-white">A<span class="text-mono-silver">y</span>AURA</span>
+    </div>
+
     <!-- Scroll Progress -->
-    <div id="scroll-progress" class="fixed top-0 left-0 w-full h-[2px] bg-white z-[60]"></div>
+    <div id="scroll-progress" class="fixed top-[29px] left-0 w-full h-[2px] bg-white z-[60]"></div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full top-0 z-50 transition-all duration-500"
+    <nav class="fixed w-full top-[29px] z-50 transition-all duration-500"
          :class="scrolled ? 'bg-mono-black/95 backdrop-blur-xl shadow-2xl shadow-black/50 py-2' : 'bg-transparent py-4'">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between">
